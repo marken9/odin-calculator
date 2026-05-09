@@ -17,6 +17,7 @@
 
 .display {
     background-color: lightgrey;
+    flex-wrap: wrap;
 }
 
 .interactive{
