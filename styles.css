@@ -1,0 +1,36 @@
+.header{
+    display:flex;
+    align-items: center;
+    gap:8px;
+    background-color: aqua;
+    justify-content: left;
+}
+
+.calculator{
+    user-select: none; /*Prevents weird bug where mouse is confused whether dragging the image*/
+    border: 5px solid black;
+    display: flex;
+    width: 600px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.display {
+    background-color: lightgrey;
+}
+
+.interactive{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.interactive button{
+    /*padding: 30px 45px; /*Vertical: 15px, Horizontal: 30px */
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+}
+
+.interactive, .display {
+    width: 300px;
+}
