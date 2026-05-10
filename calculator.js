@@ -63,11 +63,16 @@ let b = '';
 let ans = '';
 let savedOperator = '';
 let usingA = true;
+let newCycle = false;
 
 const digitButtons = document.querySelectorAll('.digit')
 digitButtons.forEach(btn => {
     btn.addEventListener('click', function() {
         if (usingA) {
+            if (newCycle) {
+                a = ''
+                newCycle = false;
+            }
             a += btn.textContent;
         } else {
             b += btn.textContent;
@@ -93,6 +98,7 @@ operatorButtons.forEach(btn => {
             b = "";
             savedOperator = "";
             usingA = true;
+            newCycle = true;
             updateDisplay();
             return;
         }
@@ -104,6 +110,7 @@ operatorButtons.forEach(btn => {
         if (a && b && savedOperator) {
             a = Math.trunc(operate(a, b, savedOperator));
             b = "";
+            newCycle = true;
         }
 
         // STORE NEW OPERATOR
@@ -121,6 +128,7 @@ document.querySelector(".clear")
         ans = "";
         savedOperator = "";
         usingA = true;
+        newCycle = false;
 
         updateDisplay();
     });
